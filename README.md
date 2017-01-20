@@ -1,2 +1,2 @@
-# hello-world
-Apenas um teste
+# Depósito
+Local que armazena exemplos e tutoriais aleatórios.
