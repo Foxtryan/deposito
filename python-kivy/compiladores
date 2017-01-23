@@ -21,14 +21,8 @@
   Em problemas com acentuaço:
   Precisa usar utf-8 coding literal
   http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=string-literal
-  
-  No caso,
-    Button:
-      text: 'botão'
-    
-  Se torna:
-    Button:
-      text: u'bot\u00e3o'
+
+
 
 2) buildozer (.apk)
   Em breve...
