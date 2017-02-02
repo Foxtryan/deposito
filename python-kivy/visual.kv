@@ -1,0 +1,131 @@
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+
+MyScreenManager:
+	transition: NoTransition()
+	id: screen_manager
+
+	tela_1: tela_1
+	tela_2: tela_2
+	tela_3: tela_3
+	tela_f: tela_f
+
+	ShowMenu:
+		id: tela_1
+		name: 'showmenu'
+		manager: screen_manager
+	TelaBox:
+		id: tela_2
+		name: 'telabox'
+		manager: screen_manager
+
+	TelaPorta:
+		id: tela_3
+		name: 'telaporta'
+		manager: screen_manager
+
+	ShowResultado:
+		id: tela_f
+		name: 'showresultado'
+		manager: screen_manager
+
+
+<ShowMenu>:
+	
+	BoxLayout:
+		orientation: "vertical"
+		BoxLayout:
+			orientation: "horizontal"
+			Label:
+				text: ""
+			Label:
+				text: "Sistema de Orçamento"
+				font_size: 40
+			Label:
+				text: "v0.1"
+				font_size: 12
+		Button:
+			text: "Box"
+			on_press: root.on_press_box()
+		Button:
+			text: "Porta"
+			on_press: root.on_press_porta()
+		Button:
+			text: "Sair"
+			on_press: root.on_press_sair()
+
+<TelaBox>:
+	BoxLayout:
+		orientation: "vertical"
+		padding: 10
+		spacing: 10
+
+		#Largura
+		Label:
+			text: "Largura:"
+			font_size: 30
+		TextInput:
+			id: txt_largura
+			name: 'txt_largura'
+			pos_hint: {"center_x": .5, "center_y": .5}
+			size_hint: .6, .5
+			font_size: 20
+			padding: 20,(self.height - self.line_height)/2
+			multiline: False
+		Button:
+			text: "Calcular"
+			on_press: root.on_press_bt()
+
+<TelaPorta>:
+	BoxLayout:
+		orientation: "vertical"
+		padding: 10
+		spacing: 10
+
+		#Largura
+		Label:
+			text: "Largura:"
+		TextInput:
+			id: txt_largura
+			pos_hint: {"center_x": .5, "center_y": .5}
+			size_hint: .6, .5
+			font_size: 20
+			padding: 20,(self.height - self.line_height)/2
+			multiline: False
+		#Altura
+		Label:
+			text: "Altura:"
+		TextInput:
+			id: txt_largura
+			pos_hint: {"center_x": .5, "center_y": .5}
+			size_hint: .6, .5
+			font_size: 20
+			padding: 20,(self.height - self.line_height)/2
+			multiline: False
+		Button:
+			text: "Abrir"
+			on_press: root.on_press_a()
+		Button:
+			text: "2 folhas"
+			on_press: root.on_press_2()
+
+		Button:
+			text: "4 folhas"
+			on_press: root.on_press_4()
+
+<ShowResultado>:
+	BoxLayout:
+		orientation: "vertical"
+		padding: 10
+		spacing: 10
+
+		Label:
+			text: root.lbl_resultado
+		Label:
+			text: "Acrilico: " + root.lbl_1
+		Label:
+			text: "V.T Incolor: " + root.lbl_2
+		Label:
+			text: "V.T Fume: " + root.lbl_3
+		Button:
+			text: "Voltar"
+			on_press: root.on_press_bt()
