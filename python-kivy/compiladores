@@ -18,8 +18,8 @@
   E em 'exe,' o path do projeto em questo como por exemplo: 
   Tree('C:\Python\Projeto\projeto-1'),
   
-  Em problemas com acentuaço:
-  Precisa usar utf-8 coding literal
+  Em problemas com acentuação em .kv sem builder pode-se utilizar:
+  utf-8 coding literal
   http://www.utf8-chartable.de/unicode-utf8-table.pl?utf8=string-literal
 
 
