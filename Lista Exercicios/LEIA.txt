@@ -1,5 +1,0 @@
-Olá!
-Utilizarei esse repositório para guardar alguns exercícios realizados durante os cursos que estudo.
-
-Python:
-Na pasta P4Z é possível localizar exercícios do curso de Python básico Python4Zombies ministrado pelo professor Fernando Masanori.
