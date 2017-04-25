@@ -26,3 +26,9 @@
 
 2) buildozer (.apk)
   Em breve...
+  Editar..
+  instalar dependencias documentação buildozer
+  comando:
+  buildozer android_new debug logcat > my_log.txt
+  
+  
