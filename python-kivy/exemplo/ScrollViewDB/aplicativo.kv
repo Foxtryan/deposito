@@ -1,0 +1,44 @@
+<Itens>:
+    size_hint_y: None
+    height: '30dp'
+    width: '100dp'
+
+    canvas.before:
+        Color:
+            rgb: 0.2, 0.2, 0.2
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Cabecalho>
+    size_hint_y: None
+    height: '30dp'
+    width: '100dp'
+
+    canvas.before:
+        Color:
+            rgb: 0.5, 0.5, 0.5
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+BoxLayout:
+	orientation: 'vertical'
+	Label:
+		text: 'Tabela'
+		size_hint_y: 0.4
+	ScrollView:
+		#size_hint_y: 
+		#size_hint_x: 0.8
+		heigth: '200dp'
+
+		Tabela:
+			cols: 3
+			size_hint_y: None
+			height: self.minimum_height
+			spacing: '1dp'
+	Botao:
+		text: "Sair"
+		on_release: self.sair()
+		size_hint_y: 0.3
+	
