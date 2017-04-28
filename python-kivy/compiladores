@@ -26,13 +26,8 @@
 
 2) buildozer (.apk)
   Em breve...
-  Editar..
-  instalar dependencias documentação buildozer
-  comando:
+
   buildozer android_new debug logcat > my_log.txt
-  
-  Lembrete:
-  Usar VM Xubuntu para compilar buildozer, não lembro qual usei para compilar o Sistema Orcamentario
-  
-  helloworld com "buildozer android debug" compilado e executando com sucesso msm em python3
+    Editar...
+
   
