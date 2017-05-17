@@ -1,0 +1,59 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+<Principal>:
+    name: 'ScreenManager'
+    BoxLayout:
+        orientation: 'vertical'
+		
+		GridLayout:
+			cols: 3
+			size_hint_y: 0.1
+
+			Button:
+				text: "Tela Anterior"
+				on_press:
+					sm.transition = SlideTransition()
+					sm.transition.direction = 'left'
+					sm.current = 'primeira'
+			Button:
+				text: "Lado a Lado"
+				on_press:
+					sm.transition = FadeTransition()
+					sm.current = 'comparativo'
+			Button:
+				text: "Tela Seguinte"
+				on_press:
+					sm.transition = SlideTransition()
+					sm.transition.direction = 'right'
+					sm.current = 'segunda'
+	
+        ScreenManager:
+            id: sm
+            Primeira:
+			Segunda:
+			Comparativo:
+
+
+<Primeira>:
+    name: "primeira"
+    BoxLayout:
+        orientation: 'vertical'
+        Button:
+            text: "Primeira Tela"
+
+			
+<Segunda>:
+	name: "segunda"
+	BoxLayout:
+		orientation: 'vertical'
+		Button:
+			text: "Segunda Tela"
+
+
+<Comparativo>:
+	name: "comparativo"
+	BoxLayout:
+		orientation: 'horizontal'
+		Primeira:
+		Segunda:
