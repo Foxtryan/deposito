@@ -1,0 +1,22 @@
+#:include tela2.kv
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+BoxLayout:
+	orientation: 'vertical'
+
+	ScreenManager:
+		id: sm
+		Tela1:
+		Tela2:
+
+
+<Tela1>:
+	name: 'primeira'
+	Button:
+		text: "Tela 1"
+		on_press:
+			root.parent.transition = FadeTransition()
+			root.parent.current = 'segunda'
+
+
+		
