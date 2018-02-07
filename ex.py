@@ -46,13 +46,13 @@ def Dentro():
 def Fora():
 	App.get_running_app().texto = "Fora do Estado"
 
-menu_tipoVenda = [
-	{'viewclass': 'MDMenuItem', 'text': 'Dentro do Estado', 'on_press':Dentro},
-	{'viewclass': 'MDMenuItem', 'text': 'Fora do Estado', 'on_press':Fora},
-]
+
 	
 class TelaEmissor(Screen):
-
+	menu_tipoVenda = [
+		{'viewclass': 'MDMenuItem', 'text': 'Dentro do Estado', 'on_press':Dentro},
+		{'viewclass': 'MDMenuItem', 'text': 'Fora do Estado', 'on_press':Fora},
+	]
 	class btnTipoVenda(MDFlatButton):
 
 		def __init__(self, **kwargs):
