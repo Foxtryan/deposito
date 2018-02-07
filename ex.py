@@ -41,10 +41,10 @@ ScreenManager:
 
 
 def Dentro():
-	TelaEmissor().Dentro()
+	App.get_running_app().texto = "Dentro do Estado"
 
 def Fora():
-	TelaEmissor().Fora()
+	App.get_running_app().texto = "Fora do Estado"
 
 menu_tipoVenda = [
 	{'viewclass': 'MDMenuItem', 'text': 'Dentro do Estado', 'on_press':Dentro},
@@ -63,12 +63,6 @@ class TelaEmissor(Screen):
 			menu.items = menu_tipoVenda
 			menu.width_mult = 4
 			menu.open(self)
-
-	def Dentro(self):
-		App.get_running_app().texto = "Dentro do Estado"
-			
-	def Fora(self):
-		App.get_running_app().texto = "Fora do Estado"
 
 class Aplicativo(App):
 
