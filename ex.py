@@ -38,10 +38,7 @@ ScreenManager:
 
 """
 
-menu_tipoVenda = [
-	{'viewclass': 'MDMenuItem', 'text': 'Dentro do Estado', 'on_press':Dentro},
-	{'viewclass': 'MDMenuItem', 'text': 'Fora do Estado', 'on_press':Fora},
-]
+
 
 def Dentro():
 	TelaEmissor().Dentro()
@@ -49,6 +46,11 @@ def Dentro():
 def Fora():
 	TelaEmissor().Fora()
 
+menu_tipoVenda = [
+	{'viewclass': 'MDMenuItem', 'text': 'Dentro do Estado', 'on_press':Dentro},
+	{'viewclass': 'MDMenuItem', 'text': 'Fora do Estado', 'on_press':Fora},
+]
+	
 class TelaEmissor(Screen):
 
 	class btnTipoVenda(MDFlatButton):
