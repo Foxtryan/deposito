@@ -60,7 +60,7 @@ class TelaEmissor(Screen):
 
 		def mostrarMenu(self):
 			menu = MDDropdownMenu()
-			menu.items = menu_tipoVenda
+			menu.items = self.menu_tipoVenda
 			menu.width_mult = 4
 			menu.open(self)
 
