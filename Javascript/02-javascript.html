@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title> Curso JS 02 </title>
+	</head>
+	
+	<body>
+		<center>
+		<h2> Curso Javascript - Módulo 02</h2>
+		<h3> REFERENCIANDO ELEMENTOS </h3>
+		<br/>
+		<h3> Códigos no console </h3>
+		</center>
+		<div id="app">
+			<button onclick="mostrarAlerta()"> Me pressione</button>
+			<button onmouseover="mostrarAlerta()">Passe o Mouse</button>
+			<input onkeypress="mostrarAlerta()"/>
+			<br/>
+			<h3> Exemplos do console </h3>
+			<input type='text' name="nome" id="nome"/>
+			<input type='text' name="nomeDois" id="nomeDois" class="nomeDois"/>
+			<input type='text' name="nomeTres" id="nomeTres" class="nomeTres"/>
+			<button class="Botao">Clique</button>
+			<br/>
+			<h3> Exemplo Completo - Imprimir texto </h3>
+			<input type="text" name="txtInput" />
+			<button class="btnAdd">Adicionar</button>
+		</div>
+		<a href="./03-javascript.html"> Arquivo 03 </a>
+		<script>
+				// Mostrar valores
+				function mostrarAlerta() {
+					alert("Hello World")
+				}
+				
+				// Pegar valores - ByID eh único
+				var inputElement = document.getElementById("nome");
+				console.log(inputElement);
+				
+				// Por tipo de classe
+				var inputElementDois = document.getElementsByClassName('nomeDois');
+				console.log(inputElementDois);
+				
+				// Referenciando o local no corpo:
+				var inputElement = document.querySelector('div#app input');
+				// Referenciando propriedade do elemento
+				//var inputElement = document.querySelector('input[name=nome]');
+				// Retornar todos elementos
+				//var inputElement = document.querySelectorAll('input');
+				console.log(inputElement);
+				
+				// Funcionamento INPUT 1 E BOTAO ADICIONAR
+				var btnElement = document.querySelector('button.botao');
+				btnElement.onclick = function() {
+					alert('Botão clicado')
+				}
+				
+				// EXEMPLO Completo
+				var txtInput = document.querySelector('input[name=txtInput]');
+				
+				var btnAdd = document.querySelector('button.btnAdd');
+				
+				btnAdd.onclick = function() {
+					var text = txtInput.value;
+					alert(text);
+				}
+		</script>
+	</body>
+</html>

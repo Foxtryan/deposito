@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<title> Lista 01 </title>
+	</head>
+	<body>
+		<center>
+			<h2> Lista de Exercícios Nº 1</h2>
+			<p> Resultados no console </p>
+		</center>
+		<script>
+
+			// Exercício I
+			var endereco = {
+				rua: "Rua dos Pinheiros",
+				numero: 1293,
+				bairro: "Centro",
+				cidade: "São Paulo",
+				uf: "SP"
+			};
+			function exibirLogradouro(e){
+				//console.log("O usuario mora em "+e.cidade+"/"+e.uf+
+				//", no bairro "+e.bairro+", na "+e.rua+" com o nº."+e.numero);
+				console.log(`O usuário mora em ${e.cidade} / ${e.uf}, no bairro `+
+				`${e.bairro}, na ${e.rua} com o nº. ${e.numero}.`);
+			};
+			exibirLogradouro(endereco);
+
+			// Exercício II
+			var c = 0;
+			function pares(x, y){
+				for (i=x; i<=y; i++){
+					if (i % 2 === 0) {
+						c += 1
+					}
+				}
+				console.log(c)
+			};
+			pares(32, 321);
+			
+			// Exercicio III
+			function temHabilidade(skills) {
+				console.log(skills.indexOf("Javascript")>-1);
+			}
+			var skills = ["Javascript", "ReactJS", "React Native"];
+			temHabilidade(skills); // responder com true ou false
+			
+			// Exercicio IV
+			function experiencia(anos) {
+				// 0 a 1 = iniciante
+				// 1 a 3 = intermediario
+				// 3 a 6 = avançado
+				// 7 pra cima Mestre Jedi
+				if (anos <= 1){
+					console.log("Iniciante");
+				} else if (anos <=3){
+					console.log("Intermediário");
+				} else if (anos <=6){
+					console.log("Avançado");
+				} else {
+					console.log("Mestre Jedi");
+				}
+			}
+			var anosEstudo = 7;
+			experiencia(anosEstudo);
+			
+			// EXERCICIO V
+			var usuarios = [
+				{
+					nome: "Diego",
+					habilidades:["Javascript", "ReactJS", "Redux"]
+				},
+				{
+					nome: "Gabriel",
+					habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+				}
+			];
+
+			function exibirHabilidade(usuarios){
+				// Assim funciona, mas nao do modo correto,
+				// requisitado no exercicio para usar os comandos "of" e "join"
+				//for (var u in usuarios){
+				//	console.log(u.nome); //RETORNA Undefinied
+				//	console.log(`O ${usuarios[u].nome} possui as habilidades: ${usuarios[u].habilidades}`);
+				//}
+				
+				for (let x of usuarios){
+					var space = (x.habilidades).join(', ');
+					console.log(`O ${x.nome} possui as habilidades: ${space}`);
+				}
+			}
+			exibirHabilidade(usuarios);
+
+			// FIM DA LISTA 01
+		</script>
+		<!-- <a href="./exercicios/02-exercicios.html">Proxima Lista</a>  -->
+	</body>
+</html>

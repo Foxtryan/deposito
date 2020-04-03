@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<title>Curso JS 01</title>
+	</head>
+	<body>
+		<center>
+		<h2> Curso Javascript - Módulo 01</h2>
+		<br/>
+		<h3> Códigos no console </h3>
+		<a href="./exercicios/01-exercicios.html" target="_blank">Exercicios</a>
+		<br/>
+		<a href=./02-javascript.html> Segundo Módulo do Curso </a>
+		</center>
+		<script>
+			//Sempre por ultimo 
+			var nome = "Diego";
+			var idade = 23;
+			var peso = 80.5;
+			var humano = true;
+			// listas
+			var alunos = ['Diego', 'Gabriel'];
+			//objetos equivale a dict
+			var aluno = {
+				nome: "Diego",
+				idade: 23,
+				peso: 80.5,
+				humano: true
+			};
+			// print eh console.log
+			console.log(alunos[1]);
+			console.log(aluno.peso);
+			
+			// VARIAVEIS
+			// var x = 10, y = 5; //ou
+			var x = 10;
+			var y = 5;
+			
+			var resultado = x + y;
+			console.log(resultado);
+			
+			// funcoes
+			function soma(numero1, numero2){
+				var resultado = numero1 + numero2;
+				return resultado;
+			}
+			// var tem escopo como python
+			var resultado = soma(1, 7);
+			console.log(resultado);
+			
+			// NOTA:
+			// if ( 1 === "1") saida FALSE nota a tipagem
+			// if ( 1 == "1") saida TRUE, pois nota se ta contido
+			
+			function retornaSexo(sexo){
+				if (sexo === 'M') {
+					return 'Masculino';
+				} else if (sexo === 'F') {
+					return 'Feminino';
+				} else {
+					return 'Outro';
+				}
+			}
+			var resultadoDois = retornaSexo('M')
+			console.log(resultadoDois);
+			// SWITCH eh um IF multiplo mais organizado
+			function retornaSexoDois(sexo){
+				switch (sexo){
+					case '1':
+						return 'Masculino';
+					case 1:
+						return 'Feminino';
+					default:
+						return 'Outro';
+				}
+			}
+			var resultadoTres = retornaSexoDois('1')
+			console.log(resultadoTres)
+			
+			// PROXIMA AULA = Operadores Logicos
+			var sexo = 'M', idade = 23;
+			// AND = &&
+			if (sexo === 'M' && idade > 18) {
+				console.log('OK');
+			}
+			// OR = ||
+			if (sexo === 'M' || idade >= 10) {
+				console.log("OK também");
+			}
+			// DIFERENTE !==
+			if (sexo !=='F'){
+				console.log('Não é F');
+			}
+			
+			// VARIAVEIS E DIMINUINDO CODIGO EX1
+			var masculino;
+			if (sexo === 'M') {
+				masculino = true;
+			} else {
+				masculino = false;
+			}
+			console.log(masculino);
+			// OU ENTAO EX2: ele retorna boolean
+			var masculino = (sexo ==='M');
+			console.log(masculino);
+			
+			// CONDICAO TERNARIA, equivale a if else com return
+			//return(sexo==='M')? 'Masculino' : 'Feminino'
+			var retorno = (sexo==='M')? 'Masculino' : 'Feminino';
+			console.log(retorno);
+			
+			// LAÇOS DE REPETIÇÃO
+			for (var i = 0; i<=10; i++){
+				console.log(i);
+			}
+			while (j <=10) {
+				console.log(j);
+				j++;
+			}
+			
+			//INTERVALOS
+			function exibeAlgo(){
+				console.log("Hello");
+			}
+			// Executa de tempo em tempo, no caso 1seg
+			setInterval(exibeAlgo, 1000);
+			
+			// Executa Uma vez
+			setTimeout(exibeAlgo, 1000);
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title> JS 03 </title>
+	</head>
+	<body>
+		<center>
+		<h2> Aula - Lidando com Elementos </h2>
+		</center>
+		
+		<div id="app">
+			<input id="nome"/>
+			
+			<div class="box"></div>
+		</div>
+		<a href="./exercicios/02-exercicios.html"> Lista Exercicios 02</a><br/>
+		<a href="./04-javascript.html"> Próximo > Módulo 03 - Arquivo n°4</a>
+		<script>
+			var linkElement = document.createElement("a");
+			//linkElement.href = 
+			linkElement.setAttribute('href', 'http://google.com');
+			
+			var textElement = document.createTextNode("Acessar Google");
+			linkElement.appendChild(textElement);
+			
+			var containerElement = document.querySelector("#app");
+			containerElement.appendChild(linkElement);
+			
+			var inputElement = document.querySelector('#nome');
+			containerElement.removeChild(inputElement);
+			
+			// Aula Alterando Estilos
+			var boxElement = document.querySelector('.box')
+			boxElement.style.width = 100;
+			boxElement.style.height = 100;
+			boxElement.style.backgroundColor = '#f00';
+		</script>
+		
+	</body>
+</html>

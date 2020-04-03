@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title> Lista 02 </title>
+	</head>
+	<body>
+		<center>
+		<h2> Lista de Exercícios 02 </h2>
+		</center>
+		<div id="app">
+			<button onClick="criarQuadrado()"> Exercicio I </button>
+			<div class="quadrado" onmouseover="mudarCor()"></div>			
+			<ul id="myUL"></ul>
+			<input type="text" name="nome"/>
+			<button onClick="Adicionar()">Adicionar</button>
+		</div>
+		<script>
+			// Exer I
+			function criarQuadrado(){
+				var quadrado = document.querySelector('.quadrado');
+				quadrado.style.width = 100;
+				quadrado.style.height = 100;
+				quadrado.style.backgroundColor = gerarCor();
+			};
+			// Exer II
+			function gerarCor() {
+				var letras = "0123456789ABCDEF";
+				var cor = "#";
+				for (var i=0; i<6; i++) {
+					cor += letras[Math.floor(Math.random() * 16)];
+				};
+				return cor;
+			};
+			
+			function mudarCor(){
+				var quadrado = document.querySelector('.quadrado');
+				quadrado.style.backgroundColor = gerarCor();
+			};
+			
+			// Exer III
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+			for (var nome of nomes) {
+				var li = document.createElement("li");
+				var t = document.createTextNode(nome);
+				li.appendChild(t);
+				document.getElementById("myUL").appendChild(li);
+			};
+
+			// Exer IV
+			function Adicionar(){
+				var li = document.createElement("li");
+				var txtEntrada = document.querySelector('input[name=nome]').value;
+				console.log(txtEntrada);
+				li.appendChild(document.createTextNode(txtEntrada));
+				document.getElementById("myUL").appendChild(li);
+				document.querySelector('input[name=nome]').value = ""
+			};
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title> Lista 03 </title>
+	</head>
+	<body>
+		<center>
+			<h2> Lista Exercicios 03 </h2>
+		</center>
+		<p> Exercicio 2 </p>
+	<div id="app">
+		<input type="text" name="user"/>
+		<button>Buscar</button>
+		<ul id="myUL"></ul>
+	</div>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script>
+		// EXERCICIO I
+		console.log("Exercício 1:")
+		function checaIdade(idade){
+			return new Promise(function(resolve, reject){
+				if (idade >= 18){
+					resolve();
+				} else {
+					reject();
+				}
+			});
+		}
+
+		checaIdade(20)
+			.then(function() {
+				console.log("Maior que 18");
+			})
+			.catch(function() {
+				console.log("Menor que 18");
+			});
+
+		// EXERCICIO II
+		var listElement = document.querySelector('#app ul');
+		var inputElement = document.querySelector('#app input');
+		var buttonElement = document.querySelector("#app button");
+
+		function buscarNome(){
+			listElement.innerHTML = ""
+			var nome = inputElement.value;
+			axios.get('https://api.github.com/users/'+nome+'/repos')
+				.then(function(response){
+					var todos = [];
+					var links = [];
+					for (x of response.data){
+						todos.push(x['name']);
+						links.push(x['html_url']);
+					}
+					var i = 0
+					for (todo of todos) {
+						var todoElement = document.createElement('li');
+						var linkElement = document.createElement('a');
+						var linkText = document.createTextNode(todo)
+						linkElement.setAttribute('href', links[i]);
+						linkElement.appendChild(linkText);
+
+						todoElement.appendChild(linkElement);
+						listElement.appendChild(todoElement);
+						i += 1
+					};
+				})
+				.catch(function(error){
+					console.log(error);
+				});
+		}
+		buttonElement.onclick = buscarNome;
+	</script>
+	</body>
+</html>
