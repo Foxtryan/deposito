@@ -35,3 +35,6 @@
 
   Caso efetue a instalação completa no Linux com o Anaconda e mesmo assim ocorrer erro ao executar um arquivo, erro window.window
   x11 instale o componente: conda install -c asmeurer readline
+
+
+adb logcat *:S python:V
